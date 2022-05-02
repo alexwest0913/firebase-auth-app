@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './index.css';
+import { Route, Routes } from 'react-router-dom';
+import Signin from './components/Signin';
+import Signup from './components/Signup';
+import Account from './components/Account';
+import {AuthContextProvider} from './context/AuthContext';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1 className='text-center text-3x1 font-bold'>
+        Firebase Auth & Context
+      </h1>
+      <AuthContextProvider>
+      <Routes>
+        <Route path='/' element={<Signin />} />
+        <Route path='/signup' element={<Signup />} />
+        <Route path='/account' element={<Account />} />
+      </Routes>
+      </AuthContextProvider>
     </div>
   );
 }
