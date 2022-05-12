@@ -1,5 +1,6 @@
 {
   "name": "firebase-auth-app",
+  "homepage": "http://alexwest-portfolio.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
